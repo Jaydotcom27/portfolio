@@ -1,12 +1,15 @@
 import React from 'react'
 import { Header, Footer } from './container'
+import { CTA } from './components'
 import './App.scss'
 
 const App = () => {
   return (
     <div className='app'>
       <Header />
-      <h1>App</h1>
+      <div className='body'>
+        <CTA />
+      </div>
       <Footer />
     </div>
   )
