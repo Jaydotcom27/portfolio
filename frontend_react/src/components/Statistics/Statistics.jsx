@@ -1,6 +1,6 @@
-import React, { PureComponent } from 'react'
+import React from 'react'
 import './Statistics.scss'
-import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { BarChart, Bar, XAxis, Tooltip } from 'recharts';
 
 const data = [
     {
