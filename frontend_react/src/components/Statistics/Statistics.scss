@@ -1,0 +1,43 @@
+#Statistics {
+    margin-top: 40px;
+
+    .inner {
+        display: flex;
+        align-items: center;
+    }
+
+    .facts-container {
+        width: 242px;
+        color: white;
+        margin-left: 60px;
+    }
+
+    .fact {
+        font-size: 22px;
+        font-weight: 600;
+    }
+    
+    .highlight {
+        font-weight: 200;
+    }
+
+    @media screen and (max-width: 720px) {
+
+        .inner {
+            flex-direction: column;
+        }
+
+        .facts-container {
+            text-align: center;
+            margin-left: 0px;
+        }
+    }
+
+    @media screen and (max-width: 480px) {
+
+        .fact {
+            font-size: 16px;
+            font-weight: 600;
+        }
+    }
+}
