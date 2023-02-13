@@ -1,0 +1,11 @@
+.app {
+    background-color: var(--base-color-1);
+    font-family: var(--font-base);
+}
+
+.app-container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: row;
+}
