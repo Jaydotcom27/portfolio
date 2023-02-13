@@ -1,0 +1,39 @@
+#header {
+    height: 60px;
+    width: 100%;
+    border-bottom: black solid 1px;
+    color: white;
+    font-size: 12px;
+    padding: 0px 80px;
+
+    .header-inner {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .logo {
+        font-size: 20px;
+        font-weight: 900;
+        cursor: pointer;
+    }
+
+    .menu {
+        display: flex;
+        justify-content: space-between;
+        gap: 30px;
+    }
+
+    .link {
+        cursor: pointer;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    @media screen and (max-width: 480px) {
+        padding: 0px 15px;
+      }
+}
