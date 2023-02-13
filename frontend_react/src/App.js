@@ -1,6 +1,6 @@
 import React from 'react'
 import { Header, Footer } from './container'
-import { CTA } from './components'
+import { CTA, Statistics } from './components'
 import './App.scss'
 
 const App = () => {
@@ -9,6 +9,7 @@ const App = () => {
       <Header />
       <div className='body'>
         <CTA />
+        <Statistics />
       </div>
       <Footer />
     </div>
