@@ -1,6 +1,6 @@
 import React from 'react'
 import { Header, Footer } from './container'
-import { CTA, Statistics, About } from './components'
+import { CTA, Statistics, About, Timeline } from './components'
 import './App.scss'
 
 const App = () => {
@@ -11,6 +11,7 @@ const App = () => {
         <CTA />
         <Statistics />
         <About />
+        <Timeline />
       </div>
       <Footer />
     </div>
