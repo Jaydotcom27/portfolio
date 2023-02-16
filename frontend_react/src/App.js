@@ -1,7 +1,7 @@
-import React from 'react'
-import { Header, Footer } from './container'
-import { CTA, Statistics, About } from './components'
-import './App.scss'
+import React from 'react';
+import { Header, Footer, Timeline } from './container';
+import { CTA, Statistics, About } from './components';
+import './App.scss';
 
 const App = () => {
   return (
@@ -11,10 +11,11 @@ const App = () => {
         <CTA />
         <Statistics />
         <About />
+        <Timeline />
       </div>
       <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;
