@@ -1,0 +1,50 @@
+#Footer {
+    height: 150px;
+    width: 100%;
+    background-color: var(--base-color-2);
+    color: var(--text-gray);
+    font-size: 12px;
+    padding: 0px 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .logo {
+        font-size: 20px;
+        font-weight: 900;
+        cursor: pointer;
+    }
+
+    .socials {
+        display: flex;
+        justify-content: space-between;
+        gap: 40px;
+        font-size: 20px;
+
+        svg {
+            transition: color .3s ease-in;
+            &:hover {
+                color: white;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .link {
+        font-weight: 500;
+        cursor: pointer;
+        transition: all .3s ease-in;
+
+        &:hover {
+            color: white;
+        }
+    }
+
+    @media screen and (max-width: 480px) {
+        padding: 30px;
+
+        .socials {
+            gap: 20px;
+        }
+    }
+}

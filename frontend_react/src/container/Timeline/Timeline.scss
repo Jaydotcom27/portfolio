@@ -1,6 +1,21 @@
 #Timeline {
-    background-color: red;
+    padding-top: 60px;
     width: 780px;
-    border-left: 3px solid blue;
-    padding-left: 50px;
+    border-left: 3px solid var(--stroke-gray);
+    padding-left: 80px;
+    padding-right: 80px;
+    padding-bottom: 200px;
+
+    @media screen and (max-width: 1050px) {
+        border-left: none;
+        width: auto;
+    }
+
+    @media screen and (max-width: 720px) {
+        padding: 50px 80px;
+    }
+
+    @media screen and (max-width: 480px) {
+        padding: 50px 20px;
+    }
 }
