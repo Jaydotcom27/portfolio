@@ -2,7 +2,7 @@
     height: 60px;
     width: 100%;
     border-bottom: black solid 1px;
-    color: white;
+    color: var(--text-gray);
     font-size: 12px;
     padding: 0px 80px;
 
@@ -17,6 +17,11 @@
         font-size: 20px;
         font-weight: 900;
         cursor: pointer;
+        transition: all .3s ease-in;
+
+        &:hover {
+            color: white;
+        }
     }
 
     .menu {
@@ -26,14 +31,16 @@
     }
 
     .link {
+        font-weight: 500;
         cursor: pointer;
+        transition: all .3s ease-in;
 
         &:hover {
-            text-decoration: underline;
+            color: white;
         }
     }
 
     @media screen and (max-width: 480px) {
         padding: 0px 15px;
-      }
+    }
 }
