@@ -1,5 +1,6 @@
 import React from 'react'
 import './Header.scss'
+import { Link } from 'react-router-dom'
 
 export const Header = () => {
   return (
@@ -7,10 +8,10 @@ export const Header = () => {
       <div className='d-flex header-inner'>
         <span className='logo'>JM.</span>
         <div className='menu'> 
-          <span className='link'>HOME</span>
-          <span className='link'>PORTFOLIO</span>
+          <Link to='/'><span className='link'>HOME</span></Link>
+          <Link to='/portfolio'><span className='link'>PORTFOLIO</span></Link>
         </div>
-        <span className='link'>TLDR</span>
+        <Link to='/tldr'><span className='link'>TLDR</span></Link>
       </div>
     </div>
   )
