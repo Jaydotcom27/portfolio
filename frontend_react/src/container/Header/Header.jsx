@@ -6,7 +6,7 @@ export const Header = () => {
   return (
     <div id='header'>
       <div className='d-flex header-inner'>
-        <span className='logo'>JM.</span>
+        <Link to='/'><span className='logo'>JM.</span></Link>
         <div className='menu'> 
           <Link to='/'><span className='link'>HOME</span></Link>
           <Link to='/portfolio'><span className='link'>PORTFOLIO</span></Link>
