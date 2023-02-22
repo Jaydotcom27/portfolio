@@ -36,7 +36,7 @@
         }
 
         .item__pill {
-            background-color: #8957E5;
+            background-color: hsl(261, 73%, 62%);
             padding: 6px 13px;
             font-size: 12px;
             font-weight: 500;
@@ -64,5 +64,15 @@
         font-weight: 300;
         color: var(--text-gray);
         font-size: 16px;
+    }
+
+    .item__skills {
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 12px;
+
+        flex-wrap: wrap;
     }
 }
