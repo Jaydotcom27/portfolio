@@ -1,6 +1,6 @@
 import React from 'react';
 import { Header, Footer } from './container';
-import { Home, TLDR } from './pages';
+import { Home, TLDR, Portfolio } from './pages';
 import { Route, Routes } from 'react-router-dom'
 
 import './App.scss';
@@ -13,6 +13,7 @@ const App = () => {
           <Routes>
             <Route path='/' element={ <Home /> } />
             <Route path='/tldr' element={ <TLDR /> } />
+            <Route path='/portfolio' element={ <Portfolio /> } />
           </Routes>
       </div>
       <Footer />

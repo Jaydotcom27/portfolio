@@ -1,0 +1,11 @@
+#Portfolio {
+    display: flex;
+    align-items: center;
+    justify-content: center;   
+
+    .items-container {
+        margin-top: 80px;
+        display: flex;
+        gap: 40px;
+    }
+}
