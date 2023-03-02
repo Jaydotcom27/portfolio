@@ -2,11 +2,34 @@
     display: flex;
     align-items: center;
     justify-content: center;   
+    flex-direction: column;
+    margin: 80px 0px;
+    
+    .filters-container {
+        margin-bottom: 30px;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+
+        .filter {
+            color: rgba($color: #FFFFFF, $alpha: 0.1);
+            transition: all .3s ease-in;
+
+            &:hover {
+                color: var(--text-gray);
+                cursor: pointer;
+                transform: translateY(-2px);
+            }
+        }
+
+        .filter-active {
+            color: rgba($color: #FFFFFF, $alpha: 1.0);
+        }
+    }
 
     .items-container {
-        margin: 80px 0px;
         display: flex;
-        gap: 40px;
+        gap: 30px;
         flex-wrap: wrap;
         justify-content: center;
         align-items: center;
