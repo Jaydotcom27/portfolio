@@ -8,14 +8,12 @@ const Timeline = () => {
         subtitle: 'Subtitle 1',
         content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.',
         images: []
-
     },
     {
         title: 'Title 2',
         subtitle: 'Subtitle 2',
         content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.',
         images: ['url1','url2']
-
     },
     {
         title: 'Title 3',
@@ -28,28 +26,24 @@ const Timeline = () => {
         subtitle: 'Subtitle 4',
         content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim ad minim veniam.',
         images: []
-
     },
     {
         title: 'Title 5',
         subtitle: 'Subtitle 5',
         content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.',
         images: []
-
     },
     {
         title: 'Title 6',
         subtitle: 'Subtitle 6',
         content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.',
         images: ['url1']
-
     },
     {
         title: 'Title 7',
         subtitle: 'Subtitle 7',
         content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.',
         images: ['url1', 'url2']
-
     }]);
 
     return (
