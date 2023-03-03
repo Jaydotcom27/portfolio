@@ -1,0 +1,32 @@
+#Pill {
+    .item__pill {
+        padding: 6px 13px;
+        font-size: 12px;
+        font-weight: 500;
+        border-radius: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: auto;
+
+        .pill__title {
+            margin-right: 4px;
+        }
+    }
+
+    .creative {
+        background-color: hsl(261, 73%, 62%);
+    }
+
+    .engineering {
+        background-color: #2EA043;
+    }
+
+    .research {
+        background-color: #1F6FEB;
+    }
+
+    .data {
+        background-color: #bd2c00;
+    }
+}
