@@ -47,4 +47,12 @@
         justify-content: center;
         align-items: center;
     }
+
+    @media screen and (max-width: 480px) {
+        margin: 30px 0px;
+
+        .filters-container {
+            font-size: 12px;
+        }
+    }
 }
