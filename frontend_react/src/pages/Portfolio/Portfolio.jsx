@@ -123,6 +123,7 @@ useEffect(() => {
               content = {item.content}
               skills = {item.skills}
               url = {item.url}
+              isPortfolioItem={true}
             ></Item>
           ))}
         </div>

@@ -19,6 +19,28 @@
         padding: 20px;
     }
 
+    .item__inner-TLDR {
+        width: 150px;
+        min-height: 150px;
+        background-color: var(--about-gray);
+        border-radius: 10px;  
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .icon__container {
+            color: var(--text-gray);
+        }
+
+        &:hover {
+            .icon__container {
+                transition: all .3s ease-in;
+                color: white;
+            }
+        }
+    }
+
     .item__header {
         display: flex;
         flex-direction: column;
@@ -56,7 +78,6 @@
         justify-content: space-between;
         align-items: center;
         font-size: 12px;
-
         flex-wrap: wrap;
     }
 }
