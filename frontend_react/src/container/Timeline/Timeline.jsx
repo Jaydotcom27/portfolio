@@ -1,6 +1,7 @@
-import { React, useState } from 'react'
+import { React, useState } from 'react';
 import { Experience } from '../../components';
-import './Timeline.scss'
+import { motion } from 'framer-motion';
+import './Timeline.scss';
 
 const Timeline = () => {
     const [ experiences ] = useState([{
