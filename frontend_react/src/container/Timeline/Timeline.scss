@@ -1,21 +1,54 @@
 #Timeline {
-    padding-top: 60px;
-    width: 780px;
-    border-left: 3px solid var(--stroke-gray);
-    padding-left: 80px;
-    padding-right: 80px;
-    padding-bottom: 200px;
+    background-image: linear-gradient(var(--stroke-gray) 0%, rgba(27,31,36,1) 90%);
+    padding-left: 3px;
+
+    .timeline-inner {
+        background-color: #1B1F24;
+        padding-top: 60px;
+        width: 780px;
+        padding-left: 80px;
+        padding-right: 80px;
+        padding-bottom: 400px;
+    }
+
+    .button {
+        background-color: var(--base-color-2);
+        padding: 15px 30px;
+        border-radius: 6px;
+        color: var(--text-gray);
+        font-weight: 600;
+        cursor: pointer;
+        transition: all .4s ease-in;
+
+        &:hover {
+            box-shadow: 0 0 35px rgba(0, 255, 115, 0.1);
+            background-color: var(--base-color-1);
+        }
+    }
 
     @media screen and (max-width: 1050px) {
         border-left: none;
         width: auto;
+        background-image: transparent;
+        padding-left: 0px;
+
+        .timeline-inner {
+            width: auto;
+            padding-left: 8%;
+            padding-right: 8%;
+            padding-bottom: 190px;
+        }
     }
 
     @media screen and (max-width: 720px) {
-        padding: 50px 80px;
+        .timeline-inner {
+            padding-bottom: 190px;
+        }
     }
 
     @media screen and (max-width: 480px) {
-        padding: 50px 20px;
+        .timeline-inner {
+            padding-bottom: 190px;
+        }
     }
 }

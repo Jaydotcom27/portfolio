@@ -20,9 +20,24 @@
 
     .data {
         font-size: 64px;
-        font-weight: 700;
+        font-weight: 100;
         color: white;
         margin: 10px 0;
+        cursor: pointer;
+    }
+
+    .data_hovered {
+        color:#ae87f5;
+        font-weight: 900;
+        transition: font-weight .4s ease;
+        text-shadow: 1px 0 15px rgba(0, 255, 115, 0.5);
+    }
+
+    .data_hovered-adjacent {
+        color:#cab1fa;
+        font-weight: 400;
+        transition: font-weight .4s ease;
+        text-shadow: 1px 0 15px rgba(0, 255, 115, 0.2);
     }
 
     @media screen and (max-width: 720px) {
