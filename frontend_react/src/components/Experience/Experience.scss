@@ -84,7 +84,16 @@
 
         .inner-container {
             flex-direction: column;
-            margin-bottom: 20px;
+            margin-bottom: 50px;
+        }
+    }
+
+    @media screen and (max-width: 680px) {
+        .image {
+            &:hover {
+                width: 400px;
+                height: 400px;
+            }
         }
     }
 
@@ -92,6 +101,10 @@
         .image {
             width: 100px;
             height: 110px;
+                &:hover {
+                    width: 200px;
+                    height: 200px;
+                }
         }
 
         .title, .subtitle {

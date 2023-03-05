@@ -3,7 +3,6 @@ import './CTA.scss'
 
 function CTA() {
   useEffect(() => {
-    console.log('happened')
     const phrase = '1,263 kilobytes of data';
     const targetEl = document.getElementById('data_cta');
 

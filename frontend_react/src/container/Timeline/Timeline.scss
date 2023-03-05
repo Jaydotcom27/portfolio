@@ -29,13 +29,26 @@
     @media screen and (max-width: 1050px) {
         border-left: none;
         width: auto;
+        background-image: transparent;
+        padding-left: 0px;
+
+        .timeline-inner {
+            width: auto;
+            padding-left: 8%;
+            padding-right: 8%;
+            padding-bottom: 190px;
+        }
     }
 
     @media screen and (max-width: 720px) {
-        padding: 50px 80px;
+        .timeline-inner {
+            padding-bottom: 190px;
+        }
     }
 
     @media screen and (max-width: 480px) {
-        padding: 50px 20px;
+        .timeline-inner {
+            padding-bottom: 190px;
+        }
     }
 }
