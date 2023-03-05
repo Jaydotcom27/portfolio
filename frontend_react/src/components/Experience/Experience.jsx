@@ -22,7 +22,9 @@ const Experience = ({ title, subtitle, content, images}) => {
   return (
     <div ref={ref}>
       <motion.div id='Experience' animate = {animation} initial = {{ x: '-100vw' }}>
-        <span className='timeline-dot'></span>
+        <div className='timeline-dot'>
+          <div className='timeline-dot__inner'></div>
+        </div>
         <div className='d-flex inner-container'>
           <div className='header'>
             <span className='title'>{title} | </span><span className='subtitle'>{subtitle}</span>
@@ -30,7 +32,7 @@ const Experience = ({ title, subtitle, content, images}) => {
           <span className='content'>{content}</span>
           <div className='d-flex image-container'>
             {images.map((image) => (
-              <div className='image'>{image}</div>
+              <img className='image' src={image} alt='portfolio'></img>
             ))}
           </div>
         </div>

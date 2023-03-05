@@ -7,7 +7,7 @@ function CTA() {
     const phrase = '1,263 kilobytes of data';
     const targetEl = document.getElementById('data_cta');
 
-    phrase.split("").map((char, idx) => {
+    phrase.split("").forEach((char, idx) => {
       const el = document.createElement('span');
       el.innerText = char;
       el.setAttribute('data-index', idx.toString());
@@ -18,13 +18,13 @@ function CTA() {
     const hoverChars = [...document.getElementsByClassName('hover-char')]
 
     const removeClasses = () => {
-      hoverChars.map((char) => {
+      hoverChars.forEach((char) => {
         char.classList.remove('data_hovered');
         char.classList.remove('data_hovered-adjacent');
       })
     };
 
-    hoverChars.map((char) => {
+    hoverChars.forEach((char) => {
       char.addEventListener('mouseover', (e) => {
         removeClasses();
         const currentElement = e.target;
