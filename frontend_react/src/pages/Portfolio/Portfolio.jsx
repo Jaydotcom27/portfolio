@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Item } from '../../components'
 import { BsFilterRight } from 'react-icons/bs'
 import { IoMdClose } from 'react-icons/io'
+import { client } from '../../client'
 import './Portfolio.scss'
 
 const Portfolio = () => {
@@ -25,60 +26,14 @@ const clearFilters = () => {
   setActiveFilter('');
 }
 
-const [ items ] = useState([
-  {
-    title: 'Title',
-    subtitle: 'Subtitle',
-    type: 'Creative',
-    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.',
-    skills: ['Adobe XD', 'Blender', 'Research', 'Javascript'],
-    url: 'https://react-icons.github.io/react-icons'
-  },
-  {
-    title: 'Title',
-    subtitle: 'Subtitle',
-    type: 'Creative',
-    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.',
-    skills: ['Adobe XD', 'Blender', 'Research', 'Javascript'],
-    url: 'https://react-icons.github.io/react-icons'
-  },
-  {
-    title: 'Title',
-    subtitle: 'Subtitle',
-    type: 'Data',
-    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.',
-    skills: ['Adobe XD', 'Blender', 'Research', 'Javascript'],
-    url: 'https://react-icons.github.io/react-icons'
-  },
-  {
-    title: 'Title',
-    subtitle: 'Subtitle',
-    type: 'Creative',
-    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.',
-    skills: ['Adobe XD', 'Blender', 'Research', 'Javascript'],
-    url: 'https://react-icons.github.io/react-icons'
-  },
-  {
-    title: 'Title',
-    subtitle: 'Subtitle',
-    type: 'Research',
-    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.',
-    skills: ['Adobe XD', 'Blender', 'Research', 'Javascript'],
-    url: 'https://react-icons.github.io/react-icons'
-  },
-  {
-    title: 'Title',
-    subtitle: 'Subtitle',
-    type: 'Engineering',
-    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.',
-    skills: ['Adobe XD', 'Blender', 'Research', 'Javascript'],
-    url: 'https://react-icons.github.io/react-icons'
-  },
-])
+const [ items, setItems ] = useState([])
 
 const [ filteredItems, setFilteredItems ] = useState([])
 
 useEffect(() => {
+  const query = '*[_type == "items"]';
+  client.fetch(query).then((data) => setItems(data))
+
   setFilteredItems(items);
   if (activeFilter) {
     const filter = activeFilter.toLowerCase();
@@ -94,6 +49,7 @@ useEffect(() => {
           <span className='text'>Show me</span>
           { filterOptions.map((option) => (
             <span 
+              key={option.filter}
               className={activeFilter === option.filter ? 'filter-active' : 'filter'} 
               onClick={() => handleFilterClick(option)}>{option.filter}</span>
           ))}
@@ -116,7 +72,7 @@ useEffect(() => {
           }
           { filteredItems.map((item) => (
             <Item
-              key = {item.title}
+              key = {item._id}
               title = {item.title}
               subtitle = {item.subtitle}
               type = {item.type}
