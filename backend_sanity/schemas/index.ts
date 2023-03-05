@@ -1,4 +1,7 @@
-import steps from './steps'
+import experiences from './experiences'
+import items from './items'
+
 export const schemaTypes = [
-    steps
+    experiences,
+    items
 ]

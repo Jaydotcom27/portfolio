@@ -21,7 +21,7 @@ const Item = ({ title, subtitle, type, content, skills, url, isPortfolioItem, ic
             </div>
             <div className='item__skills'>
               {skills.map((skill) => (
-                <div>
+                <div key={skill}>
                   <div>{skill}</div>
                 </div>
               ))}
