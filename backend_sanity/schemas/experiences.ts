@@ -24,5 +24,19 @@ export default {
             type: 'array',
             of: [{type: 'string'}]
         },
+        {
+            name: 'rank',
+            title: 'Rank',
+            type: 'number'
+        }
+    ],
+    orderings: [
+        {
+            title: 'Rank, High',
+            name: 'rankAsc',
+            by: [
+                {field: 'rank', direction: 'asc'}
+            ]
+        }
     ]
 }

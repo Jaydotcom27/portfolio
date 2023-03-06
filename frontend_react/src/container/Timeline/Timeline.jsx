@@ -8,7 +8,12 @@ const Timeline = () => {
 
     useEffect(() => {
         const query = '*[_type == "experiences"]';
-        client.fetch(query).then((data) => setExperiences(data))
+        client.fetch(query).then((data) => {
+            data.sort((a, b) => {
+                return a.rank - b.rank;
+            })
+            setExperiences(data)
+        })
     }, [])
 
     return (

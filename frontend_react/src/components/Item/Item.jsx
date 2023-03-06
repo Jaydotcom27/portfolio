@@ -1,6 +1,5 @@
 import { React } from 'react'
 import { Pill } from '../../components'
-
 import './Item.scss'
 
 const Item = ({ title, subtitle, type, content, skills, url, isPortfolioItem, icon }) => {
