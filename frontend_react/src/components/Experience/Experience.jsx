@@ -31,7 +31,7 @@ const Experience = ({ title, subtitle, content, images}) => {
           </div>
           <span className='content'>{content}</span>
           <div className='d-flex image-container'>
-            {images.map((image) => (
+            {images?.map((image) => (
               <img className='image' src={image} alt='portfolio' key={image}></img>
             ))}
           </div>
