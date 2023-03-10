@@ -2,7 +2,6 @@ import React from 'react';
 import { Header, Footer } from './container';
 import { Home, TLDR, Portfolio } from './pages';
 import { Route, Routes } from 'react-router-dom'
-
 import './App.scss';
 
 const App = () => {
