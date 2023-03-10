@@ -8,15 +8,17 @@ const Item = ({ title, subtitle, type, content, skills, url, isPortfolioItem, ic
       <a href={url} target="_blank" rel="noopener noreferrer">
         {isPortfolioItem ? (
           <div className='item__inner'>
-            <div className='item__header'>
-              <div className='item__header-pair'>
-                <span className='item__title'>{title}</span>
-                <Pill type = {type} />
+            <div>
+              <div className='item__header'>
+                <div className='item__header-pair'>
+                  <span className='item__title'>{title}</span>
+                  <Pill type = {type} />
+                </div>
+                <span className='item__subtitle'>{subtitle}</span>
               </div>
-              <span className='item__subtitle'>{subtitle}</span>
-            </div>
-            <div className='item__body'>
-              <span>{content}</span>
+              <div className='item__body'>
+                <span>{content}</span>
+              </div>
             </div>
             <div className='item__skills'>
               {skills.map((skill) => (

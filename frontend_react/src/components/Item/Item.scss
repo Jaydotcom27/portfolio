@@ -13,10 +13,13 @@
 
     .item__inner {
         width: 320px;
-        min-height: 320px;
+        height: 320px;
         background-color: var(--about-gray);
         border-radius: 10px;  
         padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
     }
 
     .item__inner-TLDR {
@@ -64,7 +67,6 @@
 
     .item__body {
         border-top: 1px solid rgba(255, 255, 255, 0.1);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         margin-top: 20px;
         padding: 20px 0px;
         font-weight: 300;
@@ -73,7 +75,8 @@
     }
 
     .item__skills {
-        margin-top: 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding-top: 15px;
         display: flex;
         justify-content: space-between;
         align-items: center;
