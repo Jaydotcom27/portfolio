@@ -3,7 +3,7 @@ import './CTA.scss'
 
 function CTA() {
   useEffect(() => {
-    const phrase = '1,263 kilobytes of data';
+    const phrase = '7,898 bytes of data';
     const targetEl = document.getElementById('data_cta');
 
     phrase.split("").forEach((char, idx) => {

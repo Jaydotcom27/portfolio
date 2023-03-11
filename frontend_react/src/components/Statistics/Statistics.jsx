@@ -1,116 +1,124 @@
-import React from 'react'
-import './Statistics.scss'
+import { React, useEffect, useState } from 'react'
 import { BarChart, Bar, XAxis, Tooltip } from 'recharts';
+import { client } from '../../client'
+import './Statistics.scss'
 
-const data = [
-    {
-      letter: 'a',
-      count: 56,
-      amt: 300,
-    },
-    {
-      letter: 'b',
-      count: 32,
-    },   
-    {
-      letter: 'c',
-      count: 11,
-    },
-    {
-      letter: 'd',
-      count: 23,
-    },
-    {
-      letter: 'e',
-      count: 92,
-    },   
-    {
-      letter: 'f',
-      count: 54,
-    },
-    {
-      letter: 'g',
-      count: 12,
-    },
-    {
-      letter: 'h',
-      count: 54,
-    },   
-    {
-      letter: 'i',
-      count: 22,
-    },
-    {
-      letter: 'j',
-      count: 15,
-    },
-    {
-      letter: 'k',
-      count: 65,
-    },   
-    {
-      letter: 'l',
-      count: 12,
-    },
-    {
-      letter: 'm',
-      count: 23,
-    },
-    {
-      letter: 'n',
-      count: 34,
-    },   
-    {
-      letter: 'o',
-      count: 54,
-    },
-    {
-      letter: 'p',
-      count: 43,
-    },
-    {
-      letter: 'q',
-      count: 32,
-    },   
-    {
-      letter: 'r',
-      count: 9,
-    },
-    {
-      letter: 's',
-      count: 11,
-    },
-    {
-      letter: 't',
-      count: 43,
-    },   
-    {
-      letter: 'u',
-      count: 13,
-    },
-    {
-      letter: 'v',
-      count: 32,
-    },
-    {
-      letter: 'w',
-      count: 3,
-    },   
-    {
-      letter: 'x',
-      count: 36,
-    },
-    {
-      letter: 'y',
-      count: 9,
-    },
-    {
-      letter: 'z',
-      count: 2,
-    }  
-  ];
+// const data = [
+//     {
+//       character: 'a',
+//       count: 56,
+//     },
+//     {
+//       character: 'b',
+//       count: 32,
+//     },   
+//     {
+//       character: 'c',
+//       count: 11,
+//     },
+//     {
+//       character: 'd',
+//       count: 23,
+//     },
+//     {
+//       character: 'e',
+//       count: 92,
+//     },   
+//     {
+//       character: 'f',
+//       count: 54,
+//     },
+//     {
+//       character: 'g',
+//       count: 12,
+//     },
+//     {
+//       character: 'h',
+//       count: 54,
+//     },   
+//     {
+//       character: 'i',
+//       count: 22,
+//     },
+//     {
+//       character: 'j',
+//       count: 15,
+//     },
+//     {
+//       character: 'k',
+//       count: 65,
+//     },   
+//     {
+//       character: 'l',
+//       count: 12,
+//     },
+//     {
+//       character: 'm',
+//       count: 23,
+//     },
+//     {
+//       character: 'n',
+//       count: 34,
+//     },   
+//     {
+//       character: 'o',
+//       count: 54,
+//     },
+//     {
+//       character: 'p',
+//       count: 43,
+//     },
+//     {
+//       character: 'q',
+//       count: 32,
+//     },   
+//     {
+//       character: 'r',
+//       count: 9,
+//     },
+//     {
+//       character: 's',
+//       count: 11,
+//     },
+//     {
+//       character: 't',
+//       count: 43,
+//     },   
+//     {
+//       character: 'u',
+//       count: 13,
+//     },
+//     {
+//       character: 'v',
+//       count: 32,
+//     },
+//     {
+//       character: 'w',
+//       count: 3,
+//     },   
+//     {
+//       character: 'x',
+//       count: 36,
+//     },
+//     {
+//       character: 'y',
+//       count: 9,
+//     },
+//     {
+//       character: 'z',
+//       count: 2,
+//     }  
+//   ];
 
 function Statistics() {
+  const [ data, setData ] = useState([])
+
+  useEffect(() => {
+    const query = '*[_type == "characters" && !(_id in path("drafts.**"))] | order(character asc)';
+    client.fetch(query).then((data) => setData(data))
+    console.log(data)
+  }, [])
+
   return (
     <div id='Statistics'>
         <div className='inner'>
@@ -119,7 +127,7 @@ function Statistics() {
                 height={160}
                 data={data}
             >
-                <XAxis dataKey="letter" tick={{ fill: 'white', fontSize: '8', fontWeight:'300' }} />
+                <XAxis dataKey="character" tick={{ fill: 'white', fontSize: '10', fontWeight:'300' }} />
                 <Bar dataKey="count" fill="white" />
                 <Tooltip contentStyle={{ backgroundColor: '#15181D', borderRadius: '10px', border: 'none', color: 'white' }}/>
             </BarChart>
