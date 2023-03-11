@@ -31,7 +31,7 @@ const [ items, setItems ] = useState([])
 const [ filteredItems, setFilteredItems ] = useState([])
 
 useEffect(() => {
-  const query = '*[_type == "items" && !(_id in path("drafts.**"))]';
+  const query = '*[_type == "items" && !(_id in path("drafts.**"))] | order(type desc)';
   client.fetch(query).then((data) => setItems(data))
 
   setFilteredItems(items);
