@@ -8,13 +8,54 @@
 
     .facts-container {
         width: 242px;
+        height: 165px;
         color: white;
         margin-left: 60px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
     }
 
     .fact {
-        font-size: 22px;
-        font-weight: 600;
+        font-size: 16px;
+        background: -webkit-linear-gradient(300deg, rgb(153, 255, 197) 20%, #be98ff 60%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        -webkit-box-decoration-break: clone;
+        box-decoration-break: clone;
+        font-weight: 900;
+        transition: all 1s ease;
+
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+
+    .hide {
+        opacity: 0;
+    }
+
+    .show {
+        opacity: 1;
+    }
+
+    .more {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 10px;
+        color: var(--stroke-gray);
+        transition: all .5s ease;
+         
+        span { 
+            font-size: 14px;
+        }
+
+        &:hover {
+            cursor: pointer;
+            color: var(--text-gray);
+        }
     }
     
     .highlight {
@@ -30,7 +71,14 @@
         .facts-container {
             text-align: center;
             margin-left: 0px;
+            justify-content: center;
+            align-items: center;
+
+            .more {
+                margin-top: 15px;
+            }
         }
+        
     }
 
     @media screen and (max-width: 480px) {

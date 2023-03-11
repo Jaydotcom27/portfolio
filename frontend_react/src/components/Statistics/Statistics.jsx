@@ -1,122 +1,47 @@
 import { React, useEffect, useState } from 'react'
 import { BarChart, Bar, XAxis, Tooltip } from 'recharts';
 import { client } from '../../client'
+import { CgMore } from 'react-icons/cg'
 import './Statistics.scss'
-
-// const data = [
-//     {
-//       character: 'a',
-//       count: 56,
-//     },
-//     {
-//       character: 'b',
-//       count: 32,
-//     },   
-//     {
-//       character: 'c',
-//       count: 11,
-//     },
-//     {
-//       character: 'd',
-//       count: 23,
-//     },
-//     {
-//       character: 'e',
-//       count: 92,
-//     },   
-//     {
-//       character: 'f',
-//       count: 54,
-//     },
-//     {
-//       character: 'g',
-//       count: 12,
-//     },
-//     {
-//       character: 'h',
-//       count: 54,
-//     },   
-//     {
-//       character: 'i',
-//       count: 22,
-//     },
-//     {
-//       character: 'j',
-//       count: 15,
-//     },
-//     {
-//       character: 'k',
-//       count: 65,
-//     },   
-//     {
-//       character: 'l',
-//       count: 12,
-//     },
-//     {
-//       character: 'm',
-//       count: 23,
-//     },
-//     {
-//       character: 'n',
-//       count: 34,
-//     },   
-//     {
-//       character: 'o',
-//       count: 54,
-//     },
-//     {
-//       character: 'p',
-//       count: 43,
-//     },
-//     {
-//       character: 'q',
-//       count: 32,
-//     },   
-//     {
-//       character: 'r',
-//       count: 9,
-//     },
-//     {
-//       character: 's',
-//       count: 11,
-//     },
-//     {
-//       character: 't',
-//       count: 43,
-//     },   
-//     {
-//       character: 'u',
-//       count: 13,
-//     },
-//     {
-//       character: 'v',
-//       count: 32,
-//     },
-//     {
-//       character: 'w',
-//       count: 3,
-//     },   
-//     {
-//       character: 'x',
-//       count: 36,
-//     },
-//     {
-//       character: 'y',
-//       count: 9,
-//     },
-//     {
-//       character: 'z',
-//       count: 2,
-//     }  
-//   ];
-
+ 
 function Statistics() {
   const [ data, setData ] = useState([])
 
+  const [ facts ] = useState(['You are looking at the letter distribution for all the fetched dynamic content across 48 documents and three schema types.', 
+  'This distribution is nearly identical to what Samuel Morse (inventor of Morse code) got when identifying letter frequency to assign codes smartly.', 
+  'In his analysis, the letter "E" was 56 times more common than the letter "Q." Within my information, you will find the letter "E" 249 times for each "Q."', 
+  'A few common words dominate the frequency of letters in English text. Of the 100 most common words in the language, 36 contain the letter E.'])
+
+  const [currentFact, setCurrentFact] = useState(0);
+
+  const cycleFact = () => {
+    const targetEl = document.getElementById('fact');
+    targetEl.classList.add('hide');
+
+    setTimeout(() => {
+      targetEl.classList.add('show');
+    }, 500)
+    
+    setTimeout(() => {
+      if (currentFact === facts.length - 1) {
+        setCurrentFact(0);
+      } else {
+        setCurrentFact(currentFact + 1)
+      }
+      targetEl.classList.remove('hide');
+      targetEl.classList.remove('show');
+    }, 500)
+  };
+
   useEffect(() => {
-    const query = '*[_type == "characters" && !(_id in path("drafts.**"))] | order(character asc)';
+    const query = '*[_type == "characters" && !(_id in path("drafts.**"))] | order(count desc)';
     client.fetch(query).then((data) => setData(data))
   }, [data])
+
+  useEffect(() => {
+    const targetEl = document.getElementById('fact');
+    targetEl.innerText = facts[currentFact]
+  }, [facts, currentFact])
 
   return (
     <div id='Statistics'>
@@ -132,8 +57,10 @@ function Statistics() {
                 <Tooltip contentStyle={{ backgroundColor: '#15181D', borderRadius: '10px', border: 'none', color: 'white' }}/>
             </BarChart>
             <div className='facts-container'>
-                <span className='fact'>
-                    “The letter <span className='highlight'>e</span> is 56 times more common than the letter <span className='highlight'>q</span>”
+                <span className='fact' id='fact'></span>
+                <span
+                  className='more'
+                  onClick={() => cycleFact()}> <span>Tell me more</span> <CgMore />
                 </span>
             </div>
         </div>
