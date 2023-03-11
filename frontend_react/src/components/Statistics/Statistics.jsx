@@ -123,11 +123,12 @@ function Statistics() {
         <div className='inner'>
             <BarChart
                 width={360}
-                height={160}
+                height={200}
                 data={data}
+                barCategoryGap={1}
             >
-                <XAxis dataKey="character" tick={{ fill: 'white', fontSize: '10', fontWeight:'300' }} />
-                <Bar dataKey="count" fill="white" />
+                <XAxis dataKey="character" interval={0} tick={{ fill: 'white', fontSize: '10', fontWeight:'300' }} />
+                <Bar dataKey="count" fill="white"  />
                 <Tooltip contentStyle={{ backgroundColor: '#15181D', borderRadius: '10px', border: 'none', color: 'white' }}/>
             </BarChart>
             <div className='facts-container'>

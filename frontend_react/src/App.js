@@ -9,11 +9,11 @@ const App = () => {
     <div className='app'>
       <div>
         <Header />
-          <Routes>
-            <Route path='/' element={ <Home /> } />
-            <Route path='/tldr' element={ <TLDR /> } />
-            <Route path='/portfolio' element={ <Portfolio /> } />
-          </Routes>
+        <Routes>
+          <Route path='/' element={ <Home /> } />
+          <Route path='/tldr' element={ <TLDR /> } />
+          <Route path='/portfolio' element={ <Portfolio /> } />
+        </Routes>
       </div>
       <Footer />
     </div>

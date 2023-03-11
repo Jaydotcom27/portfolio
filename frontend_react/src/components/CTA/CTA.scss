@@ -26,6 +26,18 @@
         cursor: pointer;
     }
 
+    .data_mount {
+        color: #cab1fa;
+        text-shadow: 1px 0 20px rgba(0, 255, 115, .5);
+        transition: all .5s ease;
+    }
+
+    .data_unmount {
+        color: white;
+        text-shadow: 0px 0 0px rgba(0, 255, 115, 0);
+        transition: all .5s ease;
+    }
+
     .data_hovered {
         color:#ae87f5;
         font-weight: 900;
