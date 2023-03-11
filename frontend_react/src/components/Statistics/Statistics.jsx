@@ -116,8 +116,7 @@ function Statistics() {
   useEffect(() => {
     const query = '*[_type == "characters" && !(_id in path("drafts.**"))] | order(character asc)';
     client.fetch(query).then((data) => setData(data))
-    console.log(data)
-  }, [])
+  }, [data])
 
   return (
     <div id='Statistics'>
