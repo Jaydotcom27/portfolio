@@ -16,6 +16,18 @@ function CTA() {
 
     const hoverChars = [...document.getElementsByClassName('hover-char')]
 
+    setTimeout(() => {
+      for (let index = 0; index < hoverChars.length; index++) {
+        hoverChars[index].classList.add('data_mount')
+      }
+    }, 1500)
+
+    setTimeout(() => {
+      for (let index = 0; index < hoverChars.length; index++) {
+        hoverChars[index].classList.add('data_unmount')
+      }
+    }, 4000)
+
     const removeClasses = () => {
       hoverChars.forEach((char) => {
         char.classList.remove('data_hovered');
